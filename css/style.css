@@ -1,0 +1,174 @@
+:root{
+  --fuente:'Bebas Neue', cursive;
+}
+
+body{
+    background-image: url(../img/1094438.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titulo-retro {
+    font-size: 40px;
+    position: relative;
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px 0px #f0f, 4px 4px 0px #00f, 6px 6px 0px #f00, 8px 8px 0px #0ff, 10px 10px 0px #fff;
+    animation-name: tituloretro;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    margin:1px auto;
+    max-width: max-content;
+    font-family: var(--fuente);
+  }
+
+  @media (min-width:768px) {
+    .titulo-retro {
+      font-size: 60px;
+      position: relative;
+      text-align: center;
+      color: black;
+      text-shadow: 2px 2px 0px #f0f, 4px 4px 0px #00f, 6px 6px 0px #f00, 8px 8px 0px #0ff, 10px 10px 0px #fff;
+      animation-name: tituloretro;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      margin:auto;
+      max-width: max-content;
+      font-family: var(--fuente);
+    }
+  }
+
+  a{
+    color: white;
+
+  }
+    
+  @keyframes tituloretro {
+    0% {
+      transform: skew(-15deg);
+    }
+    50% {
+      transform: skew(15deg);
+    }
+    100% {
+      transform: skew(-15deg);
+    }
+  }
+
+  button{
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: lighter;
+    font-family: var(--fuente);
+    text-align: center;
+    text-transform: uppercase;
+    border: 3px solid rgba(134,7,247);
+    background-color: #202020;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin:5px;
+  }
+
+  button::before{
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    transform: rotate(45deg);
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+  }
+
+  .button:hover::before{
+    top: -30%;
+    left: -30%;
+  }
+  
+  .contenedor-botones{
+    display: grid;
+    grid-auto-flow: row;
+    width: 50%;
+    margin: 5rem auto;
+    padding: 30px;
+    background: linear-gradient(180deg,rgba(0,0,0,0.8),rgba(134,7,247,20%));
+    box-shadow: 2px 2px 20px rgba(134, 7, 247, 0.8);
+    border-radius: 7%;
+  }
+
+  .transUp{
+    transition: .5s, color .10s;
+        -webkit-transition: .5s, color .10s;
+        -moz-transition: .5s, color .10s;
+  }
+
+  .transUp:hover{
+    transform: scale3d(1.5, 1.5, 0.3);
+        -webkit-transform: scale3d(1.5, 1.5, 0.3);
+        -moz-transform: scale3d(1.5, 1.5, 0.3);
+  }
+ 
+  @media (min-width:768px) {
+    .contenedor-botones{
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      grid-auto-flow: row;
+      width: 50%;
+      margin: 10rem auto;
+      padding: 30px;
+      background: linear-gradient(180deg,rgba(0,0,0,0.8),rgba(134,7,247,20%));
+      box-shadow: 2px 2px 20px rgba(134, 7, 247, 0.8);
+      border-radius: 7%;
+    }
+
+    .transUp{
+      transition: .5s, color .10s;
+          -webkit-transition: .5s, color .10s;
+          -moz-transition: .5s, color .10s;
+    }
+    .transUp:hover{
+      transform: translatey(-20px);
+          -webkit-transform: translatey(-20px);
+          -moz-transform: translatey(-20px);
+    }
+  }
+
+
+              
+
+footer svg, footer p{
+  display: inline-block;
+  vertical-align: middle; /*opcional, para alinear verticalmente la imagen y el texto*/
+  margin-right: 10px; 
+}
+
+.contenedor-footer{
+  text-align: center;
+  margin: 10rem auto;
+}
+
+.link-git{
+  font-family: var(--fuente);
+  font-size: 1.5rem;
+  color: rgb(155, 0, 121);
+}
+
+.link-git:hover{
+  color: rgba(255, 255, 255, 0.651);
+}
+
+.link-git:active{
+  color: rgb(155, 0, 121);
+}
+
+
+a{
+  text-decoration: none;
+}

@@ -1,0 +1,27 @@
+body{
+    display: flex;
+    justify-content: center;
+    margin-top: 12%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+table{
+    border-color: #60C22B;
+}
+
+th{
+    font-weight: lighter;
+}
+
+p{
+    font-size: 15px;
+}
+
+.medidas-titulos{
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: green;
+}
+
+
+
