@@ -7,13 +7,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="funcionesBasicas.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Leandro Hernandez repositorio</title>
 </head>
 <body>
    <div>
         <main>
-            <h1 class="titulo-retro">Dashboard</h1>
+            <header>
+                <h1 class="titulo-retro">Dashboard</h1>
+            </header>
             <div class="contenedor-botones">
                 <button class="transUp"><a href="trabajos/Ejercicio gato/index.html" target="_blank">Trabajo1</a></button>
                 <button class="transUp"><a href="trabajos/Ejercicio cajas/cajas.html" target="_blank">Trabajo2</a></button>
@@ -21,6 +24,10 @@
                 <button class="transUp"><a href="trabajos/Tablas ejercicio1/trabajo.html" target="_blank">Trabajo4</a></button>
                 <button class="transUp"><a href="trabajos/Tablas medidas/index.html" target="_blank">Trabajo5</a></button>
                 <button class="transUp"><a href="trabajos/formularios/index.html" target="_blank">Trabajo6</a></button>
+            </div>
+
+            <div class="contenedor-subir">
+                <button class="boton-subir flipUp-360" id="archivo" onclick="abrirVentanaLogin()">Agregar</button>
             </div>
         </main>
    </div>
