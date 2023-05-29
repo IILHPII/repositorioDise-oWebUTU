@@ -388,7 +388,61 @@ a{
     height: 2rem;
     padding-bottom: 2rem;
   }
+
+  .file-container {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    color:white;
+    justify-content: center;
+  }
+
+  .file-label {
+    display: inline-block;
+    border: 2px solid #8607f7;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--fuente);
+  }
+  
+  .file-icon {
+    margin-right: 5px;
+  }
+  
+  .file-text {
+    vertical-align: middle;
+  }
+
+
+  
 }
+
+.file-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  justify-content: center;
+  color: white;
+}
+
+.file-label {
+  display: inline-block;
+  border: 2px solid #8607f7;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--fuente);
+}
+
+.file-icon {
+  margin-right: 5px;
+}
+
+.file-text {
+  vertical-align: middle;
+}
+
 
 .shake:hover{
   animation-name: shake;
