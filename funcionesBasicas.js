@@ -7,17 +7,68 @@ function abrirVentanaLogin() {
   window.open(url, '_blank', opciones);
 }
 
+const inputElement = document.getElementById('fileInput');
+  const pond = FilePond.create(inputElement);
+  
+  // Escuchar eventos de archivo seleccionado
+  pond.on('addfile', (event) => {
+    const file = event.file;
+    console.log('Archivo seleccionado:', file.filename);
+    // Realizar operaciones con el archivo seleccionado
+});
 
-function loginAndUpload(event) {
-  event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+function uploadFiles() {
+  var files = document.getElementById('fileInput').files;
+  var email = document.getElementById('emailid').value;
+  var password = document.getElementById('passwordid').value;
 
-  const email = document.getElementById('emailid').value;
-  const password = document.getElementById('passwordid').value;
-  const filesToUpload = document.getElementById('fileInput').files;
+  var repoPath = 'https://github.com/IILHPII/repositorioDise-oWebUTU.git'; // Ruta del repositorio
+  var cloneOptions = {
+    "--depth": 1,
+    "--no-single-branch": null,
+    "--branch": "master"
+  };
 
-  // Aquí puedes realizar la lógica para autenticarte en la API con el email y la contraseña
+  var repo = Git().silent(true);
+  var repository;
+  var folderName = 'trabajos';
 
-  // Luego, puedes llamar a la función createFolderAndUploadFiles pasando la carpeta y los archivos seleccionados
-  const folderPath = 'nombre-carpeta'; // Cambiar al nombre de la carpeta deseada
-  createFolderAndUploadFiles(folderPath, filesToUpload);
+  repo.clone(repoPath, '', cloneOptions)
+    .then(function (repo) {
+      repository = repo;
+      return repository.checkout('master');
+    })
+    .then(function () {
+      var existingFolders = repository.listFiles('master', folderName);
+      var newFolderName = folderName;
+      var folderNumber = 1;
+
+      while (existingFolders.includes(newFolderName)) {
+        newFolderName = folderName + folderNumber;
+        folderNumber++;
+      }
+
+      return repository.mkdir(newFolderName); // Crea una nueva carpeta con el nombre único
+    })
+    .then(function () {
+      return repository.add(files, { "--": folderName });
+    })
+    .then(function () {
+      return repository.commit('Subida de archivos a la carpeta "' + newFolderName + '"');
+    })
+    .then(function () {
+      return repository.push(['-u', 'origin', 'master'], {
+        username: email,
+        password: password
+      });
+    })
+    .then(function () {
+      var resultDiv = document.getElementById('resultDiv');
+      var paragraph = document.createElement('p');
+      paragraph.textContent = 'Archivos subidos exitosamente en la carpeta "' + newFolderName + '"';
+      resultDiv.appendChild(paragraph);
+    })
+    .catch(function (error) {
+      console.error('Error al subir los archivos:', error);
+    });
 }
