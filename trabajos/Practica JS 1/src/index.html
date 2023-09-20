@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Oswald&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-orange-500">
+    <main class="flex flex-col justify-center items-center gap-8">
+        <div class="contenedor-objetos w-3/4 p-2 m-auto mt-48 flex flex-row flex-wrap justify-center items-center gap-3">
+            <div class="objeto  w-full md:w-1/2 lg:w-1/3 xl:w-1/4 flex flex-col items-center justify-center text-white gap-3 text-2xl p-3 shadow-sm">
+                <div class="flex justify-center max-w-xl">
+                    <img class="w-1/2 h-1/2 " src="imgs/nike-max-air.png" alt="objeto1">
+                </div>
+                <article class="nombreProducto letraProducto uppercase">Producto: <span id="nombreProducto1">Nike Air Max</span>
+                </article>
+                <article class="precioProducto letraProducto uppercase">Precio: <span id="precioProducto1">200 USD</span></article>
+                <article class="precioProducto letraProducto uppercase">Precio+IVA: <span id="precioProducto1">240 USD</span>
+                </article>
+                <input class="bg-red-600 p-2 letraProducto uppercase btn-Producto " id="comprarBtn-1" type="submit" value="Comprar">
+            </div>
+            <div class="objeto  w-full md:w-1/2 lg:w-1/3 xl:w-1/4 flex flex-col items-center justify-center text-white gap-3 text-2xl p-3">
+                <div class="flex justify-center  max-w-xs">
+                    <img class="w-1/2 h-1/2 " src="imgs/nike.png" alt="objeto1">
+                </div>
+                <article class="nombreProducto letraProducto uppercase">Producto: <span id="nombreProducto2">Remera Nike</span></article>
+                <article class="precioProducto letraProducto uppercase">Precio: <span id="precioProducto2">30 USD</span></article>
+                <article class="precioProducto letraProducto uppercase">Precio+IVA: <span id="precioProducto2">36,3 USD</span>
+                </article>
+                <input class="bg-red-600 p-2 letraProducto uppercase btn-Producto" id="comprarBtn-2" type="submit" value="Comprar">
+            </div>
+        </div>
+        <div class="contenedor-form m-auto w-1/3 flex flex-col items-center justify-center flex-nowrap letraProducto gap-3">
+            <h2 class="text-white">Agregar producto</h2>
+            <form action="" id="formulario" class="flex flex-col items-center justify-center flex-nowrap gap-5">
+                <label for="nombreId" class="text-white">Nombre <input type="text" name="nombre" id="nombreId" class="border border-black text-black"></label>
+                <label for="precioId" class="text-white" >Precio <input type="text" name="precio" id="precioId" class="border border-black text-black"></label>
+                <label for="imagenId" class="text-white">Imagen <input type="file" name="imagen" id="imagenId"></label>
+                <input class="bg-red-600 p-2 letraProducto uppercase btn-Producto" id="agregarBtn" type="submit" value="Agregar">
+            </form>
+        </div>
+    </main>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
