@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito&family=Oswald&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@500&display=swap" rel="stylesheet">
+    <title>Local</title>
+</head>
+
+<body>
+    <header>
+        <h1>Hardware y software</h1>
+    </header>
+    <main>
+        <div class="contenedor-filtros">
+            <h2>Filtros</h2>
+            <form action="" id="formulario">
+                <label for="tipoid">Tipo
+                    <select name="tipo" id="tipoId">
+                        <option value="">Seleccione</option>
+                        <option value="gabinete">Gabinete</option>
+                        <option value="perifericos">Perifericos</option>
+                        <option value="procesadores">Procesadores</option>
+                        <option value="memorias">Memorias</option>
+                        <option value="fuentes">Fuentes</option>
+                    </select>
+                </label>
+                <label for="marcaid">Marca
+                    <select name="marca" id="marcaId">
+                        <option value="">Seleccione</option>
+                        <option value="Corsair">Corsair</optdion>
+                        <option value="Hyperx">Hyperx</option>
+                        <option value="Logitech">Logitech</option>
+                        <option value="HP">HP</option>
+                        <option value="Redragon">Redragon</option>
+                        <option value="Dell">Dell</option>
+                        <option value="Patriot">Patriot</option>
+                        <option value="Samsung">Samsung</option>
+                    </select>
+                </label>
+                <label for="minimoid">Minimo
+                    <select name="minimo" id="minimoid">
+                        <option value="">Seleccione</option>
+                        <option value="1">1USD</option>
+                        <option value="5">5USD</option>
+                        <option value="10">10USD</option>
+                        <option value="50">50USD</option>
+                        <option value="100">100USD</option>
+                        <option value="200">200USD</option>
+                        <option value="300">300USD</option>
+                    </select>
+                </label>
+                <label for="maximoid">Maximo
+                    <select name="maximo" id="maximoid">
+                        <option value="">Seleccione</option>
+                        <option value="10">10USD</option>
+                        <option value="20">20USD</option>
+                        <option value="30">30USD</option>
+                        <option value="40">40USD</option>
+                        <option value="50">50USD</option>
+                        <option value="100">100USD</option>
+                        <option value="200">200USD</option>
+                        <option value="300">300USD</option>
+                    </select>
+                </label>
+            </form>
+            <button id="limpiarFiltros-btn" class="btn-filtro">Limpiar filtros</button>
+        </div>
+        <div class="contenedor-resultados">
+        
+        </div>
+    </main>
+    <script src="../database/db.js"></script>
+    <script src="../js/funciones.js"></script>
+</body>
+
+</html>
