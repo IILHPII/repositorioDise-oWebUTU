@@ -1,0 +1,98 @@
+:root {
+    --fuentePrincipal: 'Dela Gothic One', cursive;
+    --fuenteSecundaria:'Roboto Mono', monospace;
+}
+
+body {
+    background-color: #FDA628;
+}
+
+header {
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    background: linear-gradient(to right, rgb(0, 0, 0), rgba(253, 166, 40));
+    -webkit-background-clip: text;
+    /* Para navegadores WebKit (Safari, Chrome) */
+    background-clip: text;
+    /* Para navegadores estándar */
+    color: transparent;
+}
+
+main{
+    font-family: var(--fuenteSecundaria);
+}
+
+input[type='submit'],button{
+    font-family: var(--fuenteSecundaria);
+}
+
+.contenedorPrincipal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 13rem;
+}
+
+.contenedorForm {
+    background-color: white;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(253, 166, 40));
+    padding: 2rem;
+    box-shadow: 1px 1px 10px 2px;
+}
+
+#formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contendorTareas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(253, 166, 40));
+    padding: 2rem;
+    box-shadow: 1px 1px 10px 2px;
+}
+
+.mensajeAlerta{
+    color: red;
+    text-align: center;
+}
+
+.alerta {
+    opacity: 0; /* Inicialmente invisible */
+    height: 0; /* Inicialmente sin altura */
+    overflow: hidden; /* Oculta el contenido que desborda la altura */
+    transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out; /* Transiciones suaves */
+    background-color: #f00; /* Color de fondo para el mensaje de alerta */
+    color: #fff; /* Color de texto para el mensaje de alerta */
+    text-align: center;
+    margin-top: 10px; /* Espacio superior para separarlo del contenido anterior */
+    padding: 10px; /* Espaciado interno */
+}
+
+.tabla{
+    border-collapse: collapse;/* Combinar bordes para una apariencia uniforme */
+}
+
+.tabla th {
+    border: 1px solid white; /* Borde blanco */
+    padding: 8px; /* Espaciado interno */
+    text-align: left; /* Alineación del texto en las celdas de encabezado */
+    background-color: #f2f2f2; /* Color de fondo de las celdas de encabezado (opcional) */
+}
+
+/* Estilo para las celdas de datos */
+.tabla td {
+    border: 1px solid white; /* Borde blanco */
+    padding: 8px; /* Espaciado interno */
+    text-align: left; /* Alineación del texto en las celdas de datos */
+}
+
