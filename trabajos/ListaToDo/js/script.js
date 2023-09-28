@@ -4,6 +4,8 @@ const formulario = document.querySelector('#formulario');
 const btnAgregar = document.querySelector('.btn-agregar');
 const contenedorForm = document.querySelector('.form');
 const cuerpoTabla = document.querySelector('.cuerpoTabla');
+const tabla=document.querySelector('.tabla');
+
 let tareas = []
 const tarea = {
     mensaje: ''
@@ -16,14 +18,18 @@ function eventListeners() {
     inputTarea.addEventListener('blur', e => {
         const valor = e.target.value;
         if (valor.trim() !== '') {
-            agregarTarea(valor);
-            guardarLocalStorage();
+            if (filtrarLista(valor) === false) {
+                agregarTarea(valor);
+            } else {
+                crearAlerta('La tarea ya existe!');
+            }
         } else {
             crearAlerta('El campo tarea esta vacio!');
         }
     });
     formulario.addEventListener('submit', validarTarea);
-    document.addEventListener('DOMContentLoaded',cargarTareas);
+    document.addEventListener('DOMContentLoaded', cargarTareas);
+    document.addEventListener('DOMContentLoaded', agregarEventoClick);
 }
 
 //Funciones
@@ -33,7 +39,7 @@ function agregarTarea(valor) {
     };
     tareas.push(nuevaTarea);
     guardarLocalStorage(nuevaTarea);
-    console.log(tareas);
+    agregarEventoClick();
 }
 
 function validarTarea(e) {
@@ -51,10 +57,12 @@ function mostrarTarea() {
     tareas.forEach(tarea => {
         const trow = document.createElement('tr');
         const celdaDatos = document.createElement('td');
-        const accionTd=document.createElement('td');
-        const accion=document.createElement('a');
+        const accionTd = document.createElement('td');
+        const accion = document.createElement('button');
+        accion.classList.add('eliminarFila');
+        accion.value=tarea.mensaje;
         celdaDatos.innerText = tarea.mensaje;
-        accion.innerText='Eliminar';
+        accion.innerText = 'X';
         accionTd.appendChild(accion);
         trow.appendChild(celdaDatos);
         trow.appendChild(accionTd);
@@ -95,21 +103,40 @@ function limpiarHTML() {
     }
 }
 
-function cargarTareas(){
+function cargarTareas() {
     const tareasLocal = JSON.parse(localStorage.getItem('tareas')) || [];
-    if (tareasLocal.length > 0){
-        tareasLocal.forEach(tarea=>{
+    if (tareasLocal.length > 0) {
+        tareasLocal.forEach(tarea => {
             const trow = document.createElement('tr');
             const celdaDatos = document.createElement('td');
-            const accionTd=document.createElement('td');
-            const accion=document.createElement('a');
+            const accionTd = document.createElement('td');
+            const accion = document.createElement('button');
+            accion.classList.add('eliminarFila');
+            accion.value=tarea.mensaje;
             celdaDatos.innerText = tarea.mensaje;
-            accion.innerText='Eliminar';
+            accion.innerText = 'X';
             accionTd.appendChild(accion);
             trow.appendChild(celdaDatos);
             trow.appendChild(accionTd);
             cuerpoTabla.appendChild(trow);
         });
-        tareas=tareasLocal;
+        tareas = tareasLocal;
     }
+}
+
+function filtrarLista(valor) {
+    return tareas.some(tarea=>tarea.mensaje === valor);
+}
+
+function borrarTarea(){
+    console.log('hola');
+}
+
+function agregarEventoClick() {
+    const botonEliminar = document.querySelectorAll('.eliminarFila');
+    botonEliminar.forEach(boton => {
+        boton.addEventListener('click', () => {
+            console.log(`Le diste click al boton con valor ${boton.value}`)
+        });
+    });
 }
