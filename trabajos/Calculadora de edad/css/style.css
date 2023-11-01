@@ -1,0 +1,40 @@
+:root{
+    --fuente: 'Bebas Neue', sans-serif;
+}
+
+h1,h2{
+    text-align: center;
+    opacity: 0.7;
+    color: rgba(255, 255, 255, 0.726);
+    font-family: var(--fuente);
+}   
+
+h2{
+    color: black;
+}
+
+body{
+    background: linear-gradient(to left,#FA5700,#B600FA);
+}
+
+.contenedorPrincipal{
+    margin-top: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#idEdad{
+    font-family: var(--fuente);
+    width: 10rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.imagen{
+    max-width: 20rem;
+    max-height: 20rem;
+    box-shadow: 1px 1px 5px 2px;
+}

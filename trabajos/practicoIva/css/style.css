@@ -1,0 +1,76 @@
+:root{
+    --fuente: 'Bebas Neue', sans-serif;
+}
+
+body {
+    background: linear-gradient(to left, #BA1FE0, #FAB900);
+    font-family: var(--fuente);
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.contenedorForm {
+    width: 50%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 1px 1px 5px 1px;
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#formulario label {
+    font-size: 1.3rem;
+}
+
+#formulario input{
+    font-family: var(--fuente);
+
+}
+
+#botonCalcular{
+    width: 5rem;
+    height: 1.7rem;
+    font-size: 1.2rem;
+}
+
+#botonCalcular:hover{
+    transition-duration: 0.5s;
+    background-color: #38C222;
+}
+
+.error{
+    transition: opacity 1s ease;
+    background-color: red;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.totalContenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.total{
+    font-size: 1.2rem;
+}
