@@ -1,0 +1,47 @@
+:root{
+    --fuenteTitulo:'Bebas Neue', sans-serif;;
+    --fuenteTexto:'Raleway', sans-serif;
+}
+
+body{
+    background: linear-gradient(to Left,#9E00DA,#49404D);
+    background-position: inherit;
+}
+
+
+.contenedor-preguntas{
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 12rem;
+    width: 70%;
+}
+
+
+.titulo-cuestionario{
+    font-family: var(--fuenteTitulo);
+    color: white;
+    opacity: 0.8;
+    font-size: 3rem;
+}
+
+.parrafo-preguntas{
+ font-family: var(--fuenteTexto);   
+}
+
+.button-listo{
+    font-family: var(--fuenteTitulo);
+    font-size: 1.5rem;
+    box-shadow: 5px 6px 10px 2px;
+}
+
+.contenedor-botones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.parrafo-pista{
+    font-family: var(--fuenteTexto);   
+}
